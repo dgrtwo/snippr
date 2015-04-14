@@ -15,6 +15,6 @@ github_GET(path, ..., pat)
 \code{github_pat()} from devtools.}
 }
 \description{
-This function is taken directly from devtools (under GPL-3)
+This function is taken directly from devtools (under GPL)
 }
 
