@@ -1,0 +1,5 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+man-roxygen
+^README\.Rmd$
+^README-*\.png$

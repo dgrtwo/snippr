@@ -1,0 +1,61 @@
+---
+title: "Installing snippets"
+author: "David Robinson"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Installing snippets}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r}
+library(knitr)
+# eval is false so that we're not messing with the installer's snippets
+opts_chunk$set(eval = FALSE)
+```
+
+You can share your RStudio snippets with others by publishing them as a [GitHub repository](https://github.com/) or a [Gist](https://gist.github.com/).
+
+### Install from GitHub
+
+To share your snippets, create a GitHub repository with one or more `.snippets` file at the top level: see [here](https://github.com/dgrtwo/snippets) for an example. (You can have other files or folders in the repository, such as a `README.md`, and they will be skipped).
+
+Anyone can then install your snippets using the code:
+
+```{r}
+library(snippr)
+snippets_install_github("dgrtwo/snippets")
+```
+
+If you want to install only for one of the languages in the repo, you can use the `language` argument:
+
+```{r}
+snippets_install_github("dgrtwo/snippets", language = "r")
+
+# or
+
+snippets_install_github("dgrtwo/snippets", language = "c_cpp")
+```
+
+Finally, you can choose to install only a single snippet:
+
+```{r}
+snippets_install_github("dgrtwo/snippets", language = "r", name = "S3")
+```
+
+### Installing from a GitHub Gist
+
+You can also share one or more snippets as a one-file Gist, such as can be found [here](https://gist.github.com/dgrtwo/ecc6aec8d37af42cdd83). To install that snippet, do:
+
+```{r}
+snippets_install_gist("ecc6aec8d37af42cdd83", language = "r")
+```
+
+As of now Gist snippets must be a single file (and language), and the language should be specified manually.
+
+### Future Work
+
+* Categories or tags for snippets
+* Snippets installed from a package
+* Functions to publish to a GitHub repository or Gist

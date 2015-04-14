@@ -1,0 +1,70 @@
+---
+title: "Working with .snippet files"
+author: "David Robinson"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r}
+library(knitr)
+# eval is false so that we're not messing with the installer's snippets
+opts_chunk$set(eval = FALSE)
+```
+
+While most users will probably need `snippr` only to install published snippets, it provides tools for working directly with `.snippets` files and text.
+
+### Adding and Removing snippets
+
+Suppose we write a snippet for creating an S3 generic:
+
+```{r}
+snip <- '${1:funcname} <- function(${2:args}, ...) UseMethod("${1:funcname}")'
+```
+
+We can now save that function to our `.snippets` file:
+
+```{r}
+library(snippr)
+snippet_add("S3", snip)
+```
+
+If you restart RStudio you'll reload the snippets, after which you can access the snippet by typing `S3` then hitting Tab. You can replace an existing snippet simply by re-running `snippet_add`. For example, if you want to add curly brackets to the above snippet, do:
+
+```{r}
+snip <- '${1:funcname} <- function(${2:args}, ...) {
+    UseMethod("${1:funcname}")
+}'
+snippet_add("S3", snip)
+```
+
+You can remove the snippet with:
+
+```{r}
+snippet_remove("S3")
+```
+
+### Retrieving Snippets
+
+To get a list of the current snippets, do:
+
+```{r}
+snippets <- snippets_get()
+head(snippets)
+```
+
+Or to retrieve a single one:
+
+```{r}
+snippet_apply <- snippets_get("apply")
+```
+
+You can retrieve snippets for other languages with the `language` argument:
+
+```{r}
+html_snippets <- snippets_get(language = "html")
+head(html_snippets)
+```

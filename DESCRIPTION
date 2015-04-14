@@ -1,0 +1,21 @@
+Package: snippr
+Type: Package
+Title: Manage, share, and install RStudio snippets
+Version: 0.0.0.9000
+Date: 2015-04-13
+Authors@R: c(person("David", "Robinson", email = "admiral.david@gmail.com", role = c("aut", "cre")))
+Maintainer: David Robinson <admiral.david@gmail.com>
+Description: Manage, share, and install snippets for the RStudio IDE. Allows snippets
+    to be added and installed from GitHub repositories or gists.
+License: GPL (>= 2)
+Imports: dplyr,
+    stringr,
+    httr,
+    jsonlite,
+    devtools
+LazyData: TRUE
+URL: http://github.com/dgrtwo/snippr
+BugReports: http://github.com/dgrtwo/snippr/issues
+Suggests: testthat,
+    knitr
+VignetteBuilder: knitr

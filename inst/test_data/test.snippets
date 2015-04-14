@@ -1,0 +1,15 @@
+snippet lib
+	library(${1:package})
+
+snippet req
+	require(${1:package})
+
+snippet sg
+	setGeneric("${1:generic}", function(${2:x, ...}) {
+		standardGeneric("${1:generic}")
+	})
+
+snippet sm
+	setMethod("${1:generic}", ${2:class}, function(${2:x, ...}) {
+		${0}
+	})
