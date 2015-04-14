@@ -12,17 +12,14 @@ You can install `snippr` with the [devtools](https://github.com/hadley/devtools)
 devtools::install_github("dgrtwo/snippr")
 ```
 
-``` r
-library(snippr)
-```
-
 ### Sharing and installing snippets
 
 `snippr` lets you share RStudio snippets with others by publishing them as a [GitHub repository](https://github.com/) or a [Gist](https://gist.github.com/).
 
-To share your snippets, create a GitHub repository with one or more `.snippets` file at the top level: see [here](https://github.com/dgrtwo/snippets) for an example. Anyone can then install your snippets using the code:
+To share your snippets, create a GitHub repository with one or more `.snippets` file at the top level: see the [dgrtwo/snippets](https://github.com/dgrtwo/snippets) repository for an example. Anyone can then install your snippets using the code:
 
 ``` r
+library(snippr)
 snippets_install_github("dgrtwo/snippets")
 ```
 

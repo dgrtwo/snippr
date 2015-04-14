@@ -9,7 +9,7 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
-```{r}
+```{r, echo = FALSE}
 library(knitr)
 # eval is false so that we're not messing with the installer's snippets
 opts_chunk$set(eval = FALSE)
@@ -19,7 +19,7 @@ You can share your RStudio snippets with others by publishing them as a [GitHub 
 
 ### Install from GitHub
 
-To share your snippets, create a GitHub repository with one or more `.snippets` file at the top level: see [here](https://github.com/dgrtwo/snippets) for an example. (You can have other files or folders in the repository, such as a `README.md`, and they will be skipped).
+To share your snippets, create a GitHub repository with one or more `.snippets` file at the top level: see the [dgrtwo/snippets](https://github.com/dgrtwo/snippets) repository for an example. (You can have other files or folders in the repository, such as a `README.md`, and they will be skipped).
 
 Anyone can then install your snippets using the code:
 

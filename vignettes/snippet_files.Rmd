@@ -4,12 +4,12 @@ author: "David Robinson"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Working with .snippet files}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
 
-```{r}
+```{r, echo = FALSE}
 library(knitr)
 # eval is false so that we're not messing with the installer's snippets
 opts_chunk$set(eval = FALSE)
