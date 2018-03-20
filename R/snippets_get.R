@@ -7,13 +7,13 @@
 #' @examples
 #'
 #' \dontrun{
-#' snippet_get("fun")
+#' snippets_get("fun")
 #'
 #' # assuming a c_cpp .snippets file exists:
-#' snippet_get("cls", language = "c_cpp")
+#' snippets_get("cls", language = "c_cpp")
 #'
 #' # get a list of all snippets
-#' snippet_get()
+#' snippets_get()
 #'
 #' }
 #'
